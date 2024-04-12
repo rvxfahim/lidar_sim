@@ -1,0 +1,8 @@
+prefix=/home/lajos/catkin_ws/devel
+
+Name: innok_heros_control
+Description: Description of innok_heros_control
+Version: 1.0.3
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

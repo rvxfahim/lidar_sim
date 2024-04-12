@@ -1,0 +1,8 @@
+prefix=/home/lajos/catkin_ws/devel
+
+Name: innok_heros_gazebo
+Description: Description of innok_heros_gazebo
+Version: 1.0.4
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

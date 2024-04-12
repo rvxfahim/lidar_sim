@@ -1,0 +1,8 @@
+prefix=/usr/local
+
+Name: innok_heros_description
+Description: Description of innok_heros_description
+Version: 1.0.4
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

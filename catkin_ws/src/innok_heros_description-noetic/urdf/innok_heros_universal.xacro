@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+
+<!--
+Software License Agreement (BSD)
+
+\authors Tobias Griepentrog
+\maintainer Sabrina Heerklotz <sh@innok-robotics.de>
+\copyright Copyright (c) 2021, Innok Robotics GmbH, All rights reserved
+
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+
+1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+
+2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+-->
+
+<robot name="innok_heros_universal" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <xacro:macro name="innok_heros" params="front_kind wheel_kind">
+  
+  <material name="Grey">
+    <color rgba="0.66 0.66 0.66 1"/>
+  </material>
+  <!-- Defining xacro properties -->
+  <xacro:property name="wheel_seperation" value="0.580" />
+  <xacro:property name="camera_link" value="0.05" />
+
+  <!-- Including non optional .xacro files -->
+  <xacro:include filename="$(find innok_heros_description)/urdf/modules/heros_base_link.xacro"/>
+  <xacro:include filename="$(find innok_heros_description)/urdf/modules/heros_drive.xacro" />
+  <xacro:include filename="$(find innok_heros_description)/urdf/modules/heros_battery.xacro" />
+  <xacro:include filename="$(find innok_heros_description)/urdf/modules/heros_mounting_plate.xacro" />
+  <xacro:include filename="$(find innok_heros_description)/urdf/modules/sensors.xacro" />
+
+  <!-- Including modules -->
+  <xacro:include filename="$(find innok_heros_description)/urdf/ROS/heros_joint_pub.xacro" />
+
+  <!-- Wheel specifications -->
+  <xacro:include filename="$(find innok_heros_description)/urdf/configurations/wheel_${wheel_kind}_properties.xacro" />
+  <!-- heros front -->
+  <xacro:include filename="$(find innok_heros_description)/urdf/configurations/front_${front_kind}.xacro" />
+
+  <!-- Including optional .xacro files (choosen in .launch file) -->
+  <!-- instantiating macros -->
+  <xacro:heros_base_link/>
+  <xacro:heros_drive front_rear='rear' dx='0.018' flip_z='1'/>
+  <xacro:heros_battery name='battery_box' dx='0.336'/>
+  <xacro:heros_front/>
+  </xacro:macro>
+</robot>

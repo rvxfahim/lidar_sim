@@ -1,0 +1,2 @@
+belegungserkennung:innok_heros_control-indigo:innok_heros_description-noetic:innok_heros_driver-noetic:innok_heros_gazebo-noetic
+-DCATKIN_DEVEL_PREFIX=/home/lajos/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/lajos/catkin_ws/install -G Unix Makefiles

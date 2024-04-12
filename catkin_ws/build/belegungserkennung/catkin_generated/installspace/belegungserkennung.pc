@@ -1,0 +1,8 @@
+prefix=/home/lajos/catkin_ws/install
+
+Name: belegungserkennung
+Description: Description of belegungserkennung
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

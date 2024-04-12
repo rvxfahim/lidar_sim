@@ -1,0 +1,8 @@
+prefix=/usr/local
+
+Name: innok_heros_driver
+Description: Description of innok_heros_driver
+Version: 1.0.5
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

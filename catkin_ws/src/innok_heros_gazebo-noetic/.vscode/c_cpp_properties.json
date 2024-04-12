@@ -1,0 +1,25 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/lajos/catkin_ws/devel/include/**",
+        "/opt/ros/noetic/include/**",
+        "/home/lajos/catkin_ws/src/learning_tf/include/**",
+        "/home/lajos/catkin_ws/src/learning_tf2/include/**",
+        "/home/lajos/catkin_ws/src/octomap_mapping/octomap_merger/include/**",
+        "/home/lajos/catkin_ws/src/octomap_mapping/octomap_server/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}

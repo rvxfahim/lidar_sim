@@ -1,0 +1,177 @@
+<?xml version="1.0"?>
+
+
+<robot name="innok_heros_3" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<!-- LIDAR -->
+
+<joint name="lidar_joint" type="fixed">
+
+    <origin xyz="0.38 0 0.5" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="lidar_link"/>
+</joint>
+
+  <link name="lidar_link">
+    <collision>
+      <origin xyz="0 0 0.0" rpy="0 0 0"/>
+      <geometry>
+    <box size="0.1 0.1 0.1"/>
+      </geometry>
+    </collision>
+
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://innok_heros_description/meshes/hokuyo_ust10.stl"/>
+      </geometry>
+     <material name="blue">
+         <color rgba="0.0 0.0 0.8 1.0"/>
+      </material>
+    </visual>
+
+    <inertial>
+      <mass value="1e-5" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
+    </inertial>
+  </link>
+
+  <gazebo reference="lidar_link">
+    <sensor name='lidar_sensor' type='ray'>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>1000</samples>
+            <resolution>1</resolution>
+            <min_angle>-3.14</min_angle>
+            <max_angle>3.14</max_angle>
+          </horizontal>
+          <vertical>
+            <samples>16</samples>
+            <min_angle>0.262</min_angle>
+            <max_angle>-0.262</max_angle>
+          </vertical>
+        </scan>
+        <range>
+          <min>0.2</min>
+          <max>30</max>
+          <resolution>0.01</resolution>
+        </range>
+      </ray>
+      <plugin name='center_laser' filename='libgazebo_ros_velodyne_laser.so'>
+        <topicName>/lidar_sensor/scan</topicName>
+        <frameName>lidar_link</frameName>
+      </plugin>
+      <always_on>1</always_on>
+      <update_rate>20</update_rate>
+      <visualize>false</visualize>
+    </sensor>
+  </gazebo>
+
+  <!-- IMU -->
+    <gazebo> 
+        <plugin name="imu_plugin" filename="libgazebo_ros_imu.so"> 
+          <alwaysOn>true</alwaysOn> 
+          <bodyName>base_link</bodyName> 
+          <topicName>imu</topicName> 
+          <serviceName>imu_service</serviceName> 
+          <gaussianNoise>0.0</gaussianNoise> 
+          <updateRate>20.0</updateRate> 
+        </plugin> 
+      </gazebo> 
+
+
+  <!-- Camera -->
+
+  <joint name="camera_joint" type="fixed">
+    <axis xyz="0 1 0" />
+    <origin xyz="0.8 0.1 0.07" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="camera_link"/>
+  </joint>
+
+  <link name="camera_link">
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+    <box size="${camera_link} ${camera_link} ${camera_link}"/>
+      </geometry>
+    </collision>
+
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+    <box size="${camera_link} ${camera_link} ${camera_link}"/>
+      </geometry>
+      <material name="blue">
+         <color rgba="0.0 0.0 0.8 1.0"/>
+      </material>
+    </visual>
+
+    <inertial>
+      <mass value="1e-5" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
+    </inertial>
+  </link>
+
+ <gazebo reference="camera_link">
+    <sensor type="camera" name="camera1">
+      <update_rate>30.0</update_rate>
+      <camera name="head">
+        <horizontal_fov>1.3962634</horizontal_fov>
+        <image>
+          <width>800</width>
+          <height>800</height>
+          <format>R8G8B8</format>
+        </image>
+        <clip>
+          <near>0.02</near>
+          <far>300</far>
+        </clip>
+        <noise>
+          <type>gaussian</type>
+          <mean>0.0</mean>
+          <stddev>0.007</stddev>
+        </noise>
+      </camera>
+      <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+        <alwaysOn>true</alwaysOn>
+        <updateRate>0.0</updateRate>
+        <cameraName>heros/camera1</cameraName>
+        <imageTopicName>image_raw</imageTopicName>
+        <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+        <frameName>camera_link</frameName>
+        <hackBaseline>0.07</hackBaseline>
+        <distortionK1>0.0</distortionK1>
+        <distortionK2>0.0</distortionK2>
+        <distortionK3>0.0</distortionK3>
+        <distortionT1>0.0</distortionT1>
+        <distortionT2>0.0</distortionT2>
+      </plugin>
+    </sensor>
+  </gazebo>
+  
+    <!-- GPS -->
+
+   <gazebo> 
+    <plugin name="gps_controller" filename="libhector_gazebo_ros_gps.so">
+    <alwayson>true</alwayson>
+    <updaterate>1.0</updaterate>
+    <bodyname>base_link</bodyname>
+    <topicname>/fix</topicname>
+    <velocitytopicname>/fix_velocity</velocitytopicname>
+    <drift>5.0 5.0 5.0</drift>
+    <gaussiannoise>0.1 0.1 0.1</gaussiannoise>
+    <velocitydrift>0 0 0</velocitydrift>
+    <velocitygaussiannoise>0.1 0.1 0.1</velocitygaussiannoise>
+    </plugin>
+   </gazebo> 
+
+
+
+
+</robot>
+
+

@@ -1,0 +1,122 @@
+[
+{
+  "directory": "/home/lajos/catkin_ws/src/build/gtest/googlemock",
+  "command": "/usr/bin/g++  -DGTEST_CREATE_SHARED_LIBRARY=1 -Dgmock_main_EXPORTS -isystem /usr/src/googletest/googlemock/include -isystem /usr/src/googletest/googlemock -isystem /usr/src/googletest/googletest/include -isystem /usr/src/googletest/googletest  -g -fPIC   -Wall -Wshadow -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -DGTEST_HAS_PTHREAD=1 -std=c++11 -o CMakeFiles/gmock_main.dir/src/gmock_main.cc.o -c /usr/src/googletest/googlemock/src/gmock_main.cc",
+  "file": "/usr/src/googletest/googlemock/src/gmock_main.cc"
+},
+{
+  "directory": "/home/lajos/catkin_ws/src/build/gtest/googlemock",
+  "command": "/usr/bin/g++  -DGTEST_CREATE_SHARED_LIBRARY=1 -Dgmock_EXPORTS -I/usr/src/googletest/googlemock/include -I/usr/src/googletest/googlemock -isystem /usr/src/googletest/googletest/include -isystem /usr/src/googletest/googletest  -g -fPIC   -Wall -Wshadow -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -DGTEST_HAS_PTHREAD=1 -std=c++11 -o CMakeFiles/gmock.dir/src/gmock-all.cc.o -c /usr/src/googletest/googlemock/src/gmock-all.cc",
+  "file": "/usr/src/googletest/googlemock/src/gmock-all.cc"
+},
+{
+  "directory": "/home/lajos/catkin_ws/src/build/gtest/googletest",
+  "command": "/usr/bin/g++  -DGTEST_CREATE_SHARED_LIBRARY=1 -Dgtest_main_EXPORTS -isystem /usr/src/googletest/googletest/include -isystem /usr/src/googletest/googletest  -g -fPIC   -Wall -Wshadow -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -DGTEST_HAS_PTHREAD=1 -std=c++11 -o CMakeFiles/gtest_main.dir/src/gtest_main.cc.o -c /usr/src/googletest/googletest/src/gtest_main.cc",
+  "file": "/usr/src/googletest/googletest/src/gtest_main.cc"
+},
+{
+  "directory": "/home/lajos/catkin_ws/src/build/gtest/googletest",
+  "command": "/usr/bin/g++  -DGTEST_CREATE_SHARED_LIBRARY=1 -Dgtest_EXPORTS -I/usr/src/googletest/googletest/include -I/usr/src/googletest/googletest  -g -fPIC   -Wall -Wshadow -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -std=c++11 -o CMakeFiles/gtest.dir/src/gtest-all.cc.o -c /usr/src/googletest/googletest/src/gtest-all.cc",
+  "file": "/usr/src/googletest/googletest/src/gtest-all.cc"
+},
+{
+  "directory": "/home/lajos/catkin_ws/src/build/innok_heros_driver-noetic",
+  "command": "/usr/bin/g++  -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\\\"innok_heros_driver\\\" -I/opt/ros/noetic/include -I/opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp  -g   -o CMakeFiles/innok_heros_can_driver.dir/src/innok_heros_can_driver.cpp.o -c /home/lajos/catkin_ws/src/innok_heros_driver-noetic/src/innok_heros_can_driver.cpp",
+  "file": "/home/lajos/catkin_ws/src/innok_heros_driver-noetic/src/innok_heros_can_driver.cpp"
+},
+{
+  "directory": "/home/lajos/catkin_ws/src/build/octomap_mapping/octomap_merger",
+  "command": "/usr/bin/g++  -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\\\"octomap_merger\\\" -I/home/lajos/catkin_ws/src/build/devel/include -I/home/lajos/catkin_ws/src/octomap_mapping/octomap_merger/include -I/opt/ros/noetic/include -I/opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -I/usr/include/eigen3 -I/usr/include/pcl-1.10 -I/usr/include/vtk-7.1 -I/usr/include/freetype2  -g   -o CMakeFiles/align_test_node.dir/src/align_test_node.cpp.o -c /home/lajos/catkin_ws/src/octomap_mapping/octomap_merger/src/align_test_node.cpp",
+  "file": "/home/lajos/catkin_ws/src/octomap_mapping/octomap_merger/src/align_test_node.cpp"
+},
+{
+  "directory": "/home/lajos/catkin_ws/src/build/octomap_mapping/octomap_merger",
+  "command": "/usr/bin/g++  -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\\\"octomap_merger\\\" -I/home/lajos/catkin_ws/src/build/devel/include -I/home/lajos/catkin_ws/src/octomap_mapping/octomap_merger/include -I/opt/ros/noetic/include -I/opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -I/usr/include/eigen3 -I/usr/include/pcl-1.10 -I/usr/include/vtk-7.1 -I/usr/include/freetype2  -g   -o CMakeFiles/octomap_merger_node.dir/src/octomap_merger_node.cpp.o -c /home/lajos/catkin_ws/src/octomap_mapping/octomap_merger/src/octomap_merger_node.cpp",
+  "file": "/home/lajos/catkin_ws/src/octomap_mapping/octomap_merger/src/octomap_merger_node.cpp"
+},
+{
+  "directory": "/home/lajos/catkin_ws/src/build/octomap_mapping/octomap_merger",
+  "command": "/usr/bin/g++  -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\\\"octomap_merger\\\" -Dicp_align_EXPORTS -I/home/lajos/catkin_ws/src/build/devel/include -I/home/lajos/catkin_ws/src/octomap_mapping/octomap_merger/include -I/opt/ros/noetic/include -I/opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -I/usr/include/eigen3 -I/usr/include/pcl-1.10 -I/usr/include/vtk-7.1 -I/usr/include/freetype2  -g -fPIC   -o CMakeFiles/icp_align.dir/src/icp_align.cpp.o -c /home/lajos/catkin_ws/src/octomap_mapping/octomap_merger/src/icp_align.cpp",
+  "file": "/home/lajos/catkin_ws/src/octomap_mapping/octomap_merger/src/icp_align.cpp"
+},
+{
+  "directory": "/home/lajos/catkin_ws/src/build/octomap_mapping/octomap_merger",
+  "command": "/usr/bin/g++  -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\\\"octomap_merger\\\" -Dmap_merger_EXPORTS -I/home/lajos/catkin_ws/src/build/devel/include -I/home/lajos/catkin_ws/src/octomap_mapping/octomap_merger/include -I/opt/ros/noetic/include -I/opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -I/usr/include/eigen3 -I/usr/include/pcl-1.10 -I/usr/include/vtk-7.1 -I/usr/include/freetype2  -g -fPIC   -o CMakeFiles/map_merger.dir/src/map_merger.cpp.o -c /home/lajos/catkin_ws/src/octomap_mapping/octomap_merger/src/map_merger.cpp",
+  "file": "/home/lajos/catkin_ws/src/octomap_mapping/octomap_merger/src/map_merger.cpp"
+},
+{
+  "directory": "/home/lajos/catkin_ws/src/build/octomap_mapping/octomap_merger",
+  "command": "/usr/bin/g++  -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\\\"octomap_merger\\\" -I/home/lajos/catkin_ws/src/build/devel/include -I/home/lajos/catkin_ws/src/octomap_mapping/octomap_merger/include -I/opt/ros/noetic/include -I/opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -I/usr/include/eigen3 -I/usr/include/pcl-1.10 -I/usr/include/vtk-7.1 -I/usr/include/freetype2  -g   -o CMakeFiles/octomap_merger.dir/src/octomap_merger.cpp.o -c /home/lajos/catkin_ws/src/octomap_mapping/octomap_merger/src/octomap_merger.cpp",
+  "file": "/home/lajos/catkin_ws/src/octomap_mapping/octomap_merger/src/octomap_merger.cpp"
+},
+{
+  "directory": "/home/lajos/catkin_ws/src/build/octomap_mapping/octomap_server",
+  "command": "/usr/bin/g++  -DOCTOMAP_NODEBUGOUT -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\\\"octomap_server\\\" -Doctomap_server_nodelet_EXPORTS -I/home/lajos/catkin_ws/src/build/devel/include -I/home/lajos/catkin_ws/src/octomap_mapping/octomap_server/include -I/opt/ros/noetic/include -I/opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -I/usr/include/eigen3 -I/usr/include/pcl-1.10 -I/usr/include/vtk-7.1 -I/usr/include/freetype2  -g -fPIC   -o CMakeFiles/octomap_server_nodelet.dir/src/octomap_server_nodelet.cpp.o -c /home/lajos/catkin_ws/src/octomap_mapping/octomap_server/src/octomap_server_nodelet.cpp",
+  "file": "/home/lajos/catkin_ws/src/octomap_mapping/octomap_server/src/octomap_server_nodelet.cpp"
+},
+{
+  "directory": "/home/lajos/catkin_ws/src/build/octomap_mapping/octomap_server",
+  "command": "/usr/bin/g++  -DOCTOMAP_NODEBUGOUT -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\\\"octomap_server\\\" -I/home/lajos/catkin_ws/src/build/devel/include -I/home/lajos/catkin_ws/src/octomap_mapping/octomap_server/include -I/opt/ros/noetic/include -I/opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -I/usr/include/eigen3 -I/usr/include/pcl-1.10 -I/usr/include/vtk-7.1 -I/usr/include/freetype2  -g   -o CMakeFiles/octomap_tracking_server_node.dir/src/octomap_tracking_server_node.cpp.o -c /home/lajos/catkin_ws/src/octomap_mapping/octomap_server/src/octomap_tracking_server_node.cpp",
+  "file": "/home/lajos/catkin_ws/src/octomap_mapping/octomap_server/src/octomap_tracking_server_node.cpp"
+},
+{
+  "directory": "/home/lajos/catkin_ws/src/build/octomap_mapping/octomap_server",
+  "command": "/usr/bin/g++  -DCOLOR_OCTOMAP_SERVER -DOCTOMAP_NODEBUGOUT -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\\\"octomap_server\\\" -Doctomap_color_server_nodelet_EXPORTS -I/home/lajos/catkin_ws/src/build/devel/include -I/home/lajos/catkin_ws/src/octomap_mapping/octomap_server/include -I/opt/ros/noetic/include -I/opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -I/usr/include/eigen3 -I/usr/include/pcl-1.10 -I/usr/include/vtk-7.1 -I/usr/include/freetype2  -g -fPIC   -o CMakeFiles/octomap_color_server_nodelet.dir/src/octomap_server_nodelet.cpp.o -c /home/lajos/catkin_ws/src/octomap_mapping/octomap_server/src/octomap_server_nodelet.cpp",
+  "file": "/home/lajos/catkin_ws/src/octomap_mapping/octomap_server/src/octomap_server_nodelet.cpp"
+},
+{
+  "directory": "/home/lajos/catkin_ws/src/build/octomap_mapping/octomap_server",
+  "command": "/usr/bin/g++  -DOCTOMAP_NODEBUGOUT -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\\\"octomap_server\\\" -I/home/lajos/catkin_ws/src/build/devel/include -I/home/lajos/catkin_ws/src/octomap_mapping/octomap_server/include -I/opt/ros/noetic/include -I/opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -I/usr/include/eigen3 -I/usr/include/pcl-1.10 -I/usr/include/vtk-7.1 -I/usr/include/freetype2  -g   -o CMakeFiles/octomap_server_multilayer.dir/src/octomap_server_multilayer.cpp.o -c /home/lajos/catkin_ws/src/octomap_mapping/octomap_server/src/octomap_server_multilayer.cpp",
+  "file": "/home/lajos/catkin_ws/src/octomap_mapping/octomap_server/src/octomap_server_multilayer.cpp"
+},
+{
+  "directory": "/home/lajos/catkin_ws/src/build/octomap_mapping/octomap_server",
+  "command": "/usr/bin/g++  -DOCTOMAP_NODEBUGOUT -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\\\"octomap_server\\\" -I/home/lajos/catkin_ws/src/build/devel/include -I/home/lajos/catkin_ws/src/octomap_mapping/octomap_server/include -I/opt/ros/noetic/include -I/opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -I/usr/include/eigen3 -I/usr/include/pcl-1.10 -I/usr/include/vtk-7.1 -I/usr/include/freetype2  -g   -o CMakeFiles/octomap_server_node.dir/src/octomap_server_node.cpp.o -c /home/lajos/catkin_ws/src/octomap_mapping/octomap_server/src/octomap_server_node.cpp",
+  "file": "/home/lajos/catkin_ws/src/octomap_mapping/octomap_server/src/octomap_server_node.cpp"
+},
+{
+  "directory": "/home/lajos/catkin_ws/src/build/octomap_mapping/octomap_server",
+  "command": "/usr/bin/g++  -DOCTOMAP_NODEBUGOUT -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\\\"octomap_server\\\" -Doctomap_server_EXPORTS -I/home/lajos/catkin_ws/src/build/devel/include -I/home/lajos/catkin_ws/src/octomap_mapping/octomap_server/include -I/opt/ros/noetic/include -I/opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -I/usr/include/eigen3 -I/usr/include/pcl-1.10 -I/usr/include/vtk-7.1 -I/usr/include/freetype2  -g -fPIC   -o CMakeFiles/octomap_server.dir/src/OctomapServer.cpp.o -c /home/lajos/catkin_ws/src/octomap_mapping/octomap_server/src/OctomapServer.cpp",
+  "file": "/home/lajos/catkin_ws/src/octomap_mapping/octomap_server/src/OctomapServer.cpp"
+},
+{
+  "directory": "/home/lajos/catkin_ws/src/build/octomap_mapping/octomap_server",
+  "command": "/usr/bin/g++  -DOCTOMAP_NODEBUGOUT -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\\\"octomap_server\\\" -Doctomap_server_EXPORTS -I/home/lajos/catkin_ws/src/build/devel/include -I/home/lajos/catkin_ws/src/octomap_mapping/octomap_server/include -I/opt/ros/noetic/include -I/opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -I/usr/include/eigen3 -I/usr/include/pcl-1.10 -I/usr/include/vtk-7.1 -I/usr/include/freetype2  -g -fPIC   -o CMakeFiles/octomap_server.dir/src/OctomapServerMultilayer.cpp.o -c /home/lajos/catkin_ws/src/octomap_mapping/octomap_server/src/OctomapServerMultilayer.cpp",
+  "file": "/home/lajos/catkin_ws/src/octomap_mapping/octomap_server/src/OctomapServerMultilayer.cpp"
+},
+{
+  "directory": "/home/lajos/catkin_ws/src/build/octomap_mapping/octomap_server",
+  "command": "/usr/bin/g++  -DOCTOMAP_NODEBUGOUT -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\\\"octomap_server\\\" -Doctomap_server_EXPORTS -I/home/lajos/catkin_ws/src/build/devel/include -I/home/lajos/catkin_ws/src/octomap_mapping/octomap_server/include -I/opt/ros/noetic/include -I/opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -I/usr/include/eigen3 -I/usr/include/pcl-1.10 -I/usr/include/vtk-7.1 -I/usr/include/freetype2  -g -fPIC   -o CMakeFiles/octomap_server.dir/src/TrackingOctomapServer.cpp.o -c /home/lajos/catkin_ws/src/octomap_mapping/octomap_server/src/TrackingOctomapServer.cpp",
+  "file": "/home/lajos/catkin_ws/src/octomap_mapping/octomap_server/src/TrackingOctomapServer.cpp"
+},
+{
+  "directory": "/home/lajos/catkin_ws/src/build/octomap_mapping/octomap_server",
+  "command": "/usr/bin/g++  -DCOLOR_OCTOMAP_SERVER -DOCTOMAP_NODEBUGOUT -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\\\"octomap_server\\\" -Doctomap_server_color_EXPORTS -I/home/lajos/catkin_ws/src/build/devel/include -I/home/lajos/catkin_ws/src/octomap_mapping/octomap_server/include -I/opt/ros/noetic/include -I/opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -I/usr/include/eigen3 -I/usr/include/pcl-1.10 -I/usr/include/vtk-7.1 -I/usr/include/freetype2  -g -fPIC   -o CMakeFiles/octomap_server_color.dir/src/OctomapServer.cpp.o -c /home/lajos/catkin_ws/src/octomap_mapping/octomap_server/src/OctomapServer.cpp",
+  "file": "/home/lajos/catkin_ws/src/octomap_mapping/octomap_server/src/OctomapServer.cpp"
+},
+{
+  "directory": "/home/lajos/catkin_ws/src/build/octomap_mapping/octomap_server",
+  "command": "/usr/bin/g++  -DCOLOR_OCTOMAP_SERVER -DOCTOMAP_NODEBUGOUT -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\\\"octomap_server\\\" -Doctomap_server_color_EXPORTS -I/home/lajos/catkin_ws/src/build/devel/include -I/home/lajos/catkin_ws/src/octomap_mapping/octomap_server/include -I/opt/ros/noetic/include -I/opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -I/usr/include/eigen3 -I/usr/include/pcl-1.10 -I/usr/include/vtk-7.1 -I/usr/include/freetype2  -g -fPIC   -o CMakeFiles/octomap_server_color.dir/src/OctomapServerMultilayer.cpp.o -c /home/lajos/catkin_ws/src/octomap_mapping/octomap_server/src/OctomapServerMultilayer.cpp",
+  "file": "/home/lajos/catkin_ws/src/octomap_mapping/octomap_server/src/OctomapServerMultilayer.cpp"
+},
+{
+  "directory": "/home/lajos/catkin_ws/src/build/octomap_mapping/octomap_server",
+  "command": "/usr/bin/g++  -DCOLOR_OCTOMAP_SERVER -DOCTOMAP_NODEBUGOUT -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\\\"octomap_server\\\" -Doctomap_server_color_EXPORTS -I/home/lajos/catkin_ws/src/build/devel/include -I/home/lajos/catkin_ws/src/octomap_mapping/octomap_server/include -I/opt/ros/noetic/include -I/opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -I/usr/include/eigen3 -I/usr/include/pcl-1.10 -I/usr/include/vtk-7.1 -I/usr/include/freetype2  -g -fPIC   -o CMakeFiles/octomap_server_color.dir/src/TrackingOctomapServer.cpp.o -c /home/lajos/catkin_ws/src/octomap_mapping/octomap_server/src/TrackingOctomapServer.cpp",
+  "file": "/home/lajos/catkin_ws/src/octomap_mapping/octomap_server/src/TrackingOctomapServer.cpp"
+},
+{
+  "directory": "/home/lajos/catkin_ws/src/build/octomap_mapping/octomap_server",
+  "command": "/usr/bin/g++  -DOCTOMAP_NODEBUGOUT -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\\\"octomap_server\\\" -I/home/lajos/catkin_ws/src/build/devel/include -I/home/lajos/catkin_ws/src/octomap_mapping/octomap_server/include -I/opt/ros/noetic/include -I/opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -I/usr/include/eigen3 -I/usr/include/pcl-1.10 -I/usr/include/vtk-7.1 -I/usr/include/freetype2  -g   -o CMakeFiles/octomap_saver.dir/src/octomap_saver.cpp.o -c /home/lajos/catkin_ws/src/octomap_mapping/octomap_server/src/octomap_saver.cpp",
+  "file": "/home/lajos/catkin_ws/src/octomap_mapping/octomap_server/src/octomap_saver.cpp"
+},
+{
+  "directory": "/home/lajos/catkin_ws/src/build/octomap_mapping/octomap_server",
+  "command": "/usr/bin/g++  -DCOLOR_OCTOMAP_SERVER -DOCTOMAP_NODEBUGOUT -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\\\"octomap_server\\\" -I/home/lajos/catkin_ws/src/build/devel/include -I/home/lajos/catkin_ws/src/octomap_mapping/octomap_server/include -I/opt/ros/noetic/include -I/opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -I/usr/include/eigen3 -I/usr/include/pcl-1.10 -I/usr/include/vtk-7.1 -I/usr/include/freetype2  -g   -o CMakeFiles/octomap_color_server_node.dir/src/octomap_server_node.cpp.o -c /home/lajos/catkin_ws/src/octomap_mapping/octomap_server/src/octomap_server_node.cpp",
+  "file": "/home/lajos/catkin_ws/src/octomap_mapping/octomap_server/src/octomap_server_node.cpp"
+},
+{
+  "directory": "/home/lajos/catkin_ws/src/build/octomap_mapping/octomap_server",
+  "command": "/usr/bin/g++  -DOCTOMAP_NODEBUGOUT -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\\\"octomap_server\\\" -I/home/lajos/catkin_ws/src/build/devel/include -I/home/lajos/catkin_ws/src/octomap_mapping/octomap_server/include -I/opt/ros/noetic/include -I/opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -I/usr/include/eigen3 -I/usr/include/pcl-1.10 -I/usr/include/vtk-7.1 -I/usr/include/freetype2  -g   -o CMakeFiles/octomap_server_static.dir/src/octomap_server_static.cpp.o -c /home/lajos/catkin_ws/src/octomap_mapping/octomap_server/src/octomap_server_static.cpp",
+  "file": "/home/lajos/catkin_ws/src/octomap_mapping/octomap_server/src/octomap_server_static.cpp"
+}
+]

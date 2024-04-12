@@ -1,0 +1,22 @@
+version: '3'
+services:
+  lidar_sim:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: lidar_sim
+    volumes:
+      - /run/desktop/mnt/host/wslg/.X11-unix:/tmp/.X11-unix
+      - /run/desktop/mnt/host/wslg:/mnt/wslg
+    environment:
+      - DISPLAY=:0
+      - WAYLAND_DISPLAY=wayland-0
+      - XDG_RUNTIME_DIR=/mnt/wslg/runtime-dir
+      - PULSE_SERVER=unix:/mnt/wslg/PulseServer
+    ports:
+      - "11311:11311"
+      - "3636:3636"
+      - "9090:9090"
+    tty: true
+    stdin_open: true
+    command: /rosstart/start-services.sh

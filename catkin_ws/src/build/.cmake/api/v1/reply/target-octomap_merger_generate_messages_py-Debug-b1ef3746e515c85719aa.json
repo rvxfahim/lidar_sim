@@ -1,0 +1,151 @@
+{
+	"backtrace" : 4,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_custom_target",
+			"include",
+			"generate_messages",
+			"add_dependencies"
+		],
+		"files" : 
+		[
+			"build/octomap_mapping/octomap_merger/cmake/octomap_merger-genmsg.cmake",
+			"/opt/ros/noetic/share/genmsg/cmake/genmsg-extras.cmake",
+			"octomap_mapping/octomap_merger/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 2
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 22,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 307,
+				"parent" : 1
+			},
+			{
+				"file" : 0,
+				"parent" : 2
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 221,
+				"parent" : 3
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 306,
+				"parent" : 3
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 309,
+				"parent" : 3
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 230,
+				"parent" : 3
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 228,
+				"parent" : 3
+			}
+		]
+	},
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 5,
+			"id" : "nav_msgs_generate_messages_py::@bf0943131b2fd795243e"
+		},
+		{
+			"backtrace" : 6,
+			"id" : "octomap_msgs_generate_messages_py::@362c86fb9bee0ead8fab"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "_octomap_merger_generate_messages_check_deps_OctomapNeighbors::@362c86fb9bee0ead8fab"
+		},
+		{
+			"backtrace" : 8,
+			"id" : "_octomap_merger_generate_messages_check_deps_OctomapArray::@362c86fb9bee0ead8fab"
+		}
+	],
+	"id" : "octomap_merger_generate_messages_py::@362c86fb9bee0ead8fab",
+	"name" : "octomap_merger_generate_messages_py",
+	"paths" : 
+	{
+		"build" : "octomap_mapping/octomap_merger",
+		"source" : "octomap_mapping/octomap_merger"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		},
+		{
+			"name" : "CMake Rules",
+			"sourceIndexes" : 
+			[
+				1,
+				2,
+				3,
+				4
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 4,
+			"isGenerated" : true,
+			"path" : "build/octomap_mapping/octomap_merger/CMakeFiles/octomap_merger_generate_messages_py",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/octomap_mapping/octomap_merger/CMakeFiles/octomap_merger_generate_messages_py.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/devel/lib/python3/dist-packages/octomap_merger/msg/_OctomapArray.py.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/devel/lib/python3/dist-packages/octomap_merger/msg/_OctomapNeighbors.py.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/devel/lib/python3/dist-packages/octomap_merger/msg/__init__.py.rule",
+			"sourceGroupIndex" : 1
+		}
+	],
+	"type" : "UTILITY"
+}
