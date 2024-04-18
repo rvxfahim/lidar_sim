@@ -25,11 +25,13 @@ services:
       context: .
       dockerfile: DockerfileMatlab
     environment:
-      - ADDITIONAL_PRODUCTS="ROS_Toolbox"
+      - ADDITIONAL_PRODUCTS="ROS_Toolbox Simulink Computer_Vision_Toolbox"
     ports:
       - "8888:8888"  # Expose port 8888 for web access if needed
-    shm_size: 1024M  # Set shared memory size, which is important for performance
-    command: ["-browser"]  # Start MATLAB with browser mode enabled
+      - "6080:6080"
+      - "5901:5901"  # Expose port 5901 for VNC access if needed
+    shm_size: 2048M  # Set shared memory size, which is important for performance
+    command: ["-vnc"]  # Start MATLAB with browser mode enabled
     tty: true  # Allocates a pseudo-TTY (similar to -t in Docker run)
     stdin_open: true  # Keeps stdin open (similar to -i in Docker run)
     restart: "no" 

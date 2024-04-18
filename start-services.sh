@@ -11,8 +11,8 @@ ROSCORE_PID=$!
 sleep 5
 
 # Start Velodyne launch in the background
-roslaunch velodyne_pointcloud VLP16_points.launch &
-VELODYNE_PID=$!
+# roslaunch velodyne_pointcloud VLP16_points.launch &
+# VELODYNE_PID=$!
 
 # Start Gazebo launch in the background
 roslaunch innok_heros_gazebo innok_heros_gazebo.launch &
@@ -20,5 +20,5 @@ GAZEBO_PID=$!
 
 # Wait for all processes to finish
 wait $ROSCORE_PID
-wait $VELODYNE_PID
+# wait $VELODYNE_PID
 wait $GAZEBO_PID

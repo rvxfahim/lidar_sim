@@ -36,7 +36,7 @@ WORKDIR /home/lajos/catkin_ws
 #     && rm -rf /var/lib/apt/lists/*
 
 RUN apt-get update && apt-get install -y \
-    ros-noetic-velodyne \
+    # ros-noetic-velodyne \
     supervisor \
     bash \ 
     dos2unix \
