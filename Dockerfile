@@ -14,13 +14,31 @@ WORKDIR /home/lajos/catkin_ws
 # RUN /bin/bash -c '. /opt/ros/noetic/setup.bash; catkin_make'
 # RUN echo "source /home/lajos/catkin_ws/devel/setup.bash" >> ~/.bashrc
 
-# Install some useful tools and dependencies for development
+# # Install GPG keys for ROS packages and configure the APT source securely
+# RUN apt-get install -y --no-install-recommends \
+#     ca-certificates \
+#     gnupg \
+#     lsb-release \
+#     && rm -rf /var/lib/apt/lists/*
+
+# RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys F42ED6FBAB17C654 \
+#     && apt-key adv --fetch-keys http://packages.ros.org/ros.key \
+#     && echo "deb [trusted=yes] http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list
+
+
+#     # Install some useful tools and dependencies for development
+# RUN apt-get update && apt-get install -y \
+#     ros-noetic-velodyne \
+#     supervisor \
+#     bash \ 
+#     dos2unix \
+#     build-essential \
+#     && rm -rf /var/lib/apt/lists/*
+
 RUN apt-get update && apt-get install -y \
-    ros-noetic-velodyne \
-    supervisor \
-    bash \ 
-    dos2unix \
-    build-essential \
+    libgl1-mesa-glx \
+    libgl1-mesa-dri \
+    mesa-utils \
     && rm -rf /var/lib/apt/lists/*
 
 # Setup environment variables needed for ROS

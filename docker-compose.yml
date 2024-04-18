@@ -4,10 +4,9 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: lidar_sim
+    container_name: lidarsim
     volumes:
-      - /run/desktop/mnt/host/wslg/.X11-unix:/tmp/.X11-unix
-      - /run/desktop/mnt/host/wslg:/mnt/wslg
+      - /tmp/.X11-unix:/tmp/.X11-unix  # Enable X11 forwarding
     environment:
       - DISPLAY=:0
       - WAYLAND_DISPLAY=wayland-0
@@ -20,3 +19,16 @@ services:
     tty: true
     stdin_open: true
     command: /rosstart/start-services.sh
+  matlab:
+    build:
+      context: .
+      dockerfile: DockerfileMatlab
+    environment:
+      - ADDITIONAL_PRODUCTS="ROS_Toolbox"
+    ports:
+      - "8888:8888"  # Expose port 8888 for web access if needed
+    shm_size: 1024M  # Set shared memory size, which is important for performance
+    command: ["-browser"]  # Start MATLAB with browser mode enabled
+    tty: true  # Allocates a pseudo-TTY (similar to -t in Docker run)
+    stdin_open: true  # Keeps stdin open (similar to -i in Docker run)
+    restart: "no" 
