@@ -36,9 +36,11 @@ WORKDIR /home/lajos/catkin_ws
 #     && rm -rf /var/lib/apt/lists/*
 
 RUN apt-get update && apt-get install -y \
-    libgl1-mesa-glx \
-    libgl1-mesa-dri \
-    mesa-utils \
+    ros-noetic-velodyne \
+    supervisor \
+    bash \ 
+    dos2unix \
+    build-essential \
     && rm -rf /var/lib/apt/lists/*
 
 # Setup environment variables needed for ROS
