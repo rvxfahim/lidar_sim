@@ -6,7 +6,8 @@ services:
       dockerfile: Dockerfile
     container_name: lidarsim
     volumes:
-      - /tmp/.X11-unix:/tmp/.X11-unix  # Enable X11 forwarding
+      - /run/desktop/mnt/host/wslg/.X11-unix:/tmp/.X11-unix
+      - /run/desktop/mnt/host/wslg:/mnt/wslg
     environment:
       - DISPLAY=:0
       - WAYLAND_DISPLAY=wayland-0
