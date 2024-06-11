@@ -1,17 +1,7 @@
-# Manual Node for Robot Control
+# Manual Node for Innok Heros Robot Control
 
 ## Overview
-This ROS node (`manual_node`) is designed for manual control over a robot's movement, managing the cmd_vel multiplexer based on incoming commands from the `/CCS_Data` topic. It ensures precise control over the robot's motion by selecting appropriate cmd_vel topics.
-
-## Prerequisites
-Before deploying this node, ensure your system meets the following requirements:
-- ROS (Robot Operating System) - Tested with ROS 1
-- Python 3
-- ROS packages:
-  - `geometry_msgs`
-  - `sensor_msgs`
-  - `std_msgs`
-  - `topic_tools`
+This ROS node (`manual_node`) is designed for manual control over a robot's movement, managing the cmd_vel multiplexer based on incoming commands from the `/CCS_Data` topic. It enables control over the robot's motion by selecting appropriate cmd_vel topics.
 
 ## Installation
 1. Place the Python script into your ROS package structure as follows:
