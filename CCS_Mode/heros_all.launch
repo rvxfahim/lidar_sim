@@ -1,0 +1,138 @@
+<?xml version="1.0"?>
+<!DOCTYPE launch [
+<!ENTITY project_directory "/home/heros/cockpit">
+]>
+
+<launch>
+    <arg name="xsens" default="true"/>
+    <arg name="bno" default="false"/>
+
+    <rosparam param="/robot_model">{height: 600, length: 1700, name: induros, pos_base_link: 715, width: 800}</rosparam>
+
+    <!-- TFs -->
+    <node pkg="tf2_ros" type="static_transform_publisher" name="imu_link_broadcaster" args="0.0 0.0 0.5 0.0 0 0.0 base_link imu_link" />
+    <node pkg="tf2_ros" type="static_transform_publisher" name="lidar_broadcaster" args="0.4 0.0 0.85 0 0 0 base_link lidar" />
+    <!-- <node pkg="tf2_ros" type="static_transform_publisher" name="lidar_twisted_broadcaster" args="0.0 0.0 0.0 3.14 0 0 lidar lidar_twisted" />-->
+    <node pkg="tf2_ros" type="static_transform_publisher" name="antenna_broadcaster" args="0 0.0 0 0 0 0 base_link antenna" />
+
+    <!-- DRIVER -->
+    <node pkg="innok_heros_driver" type="innok_heros_can_driver" name="heros_node" args="_device:=can0" respawn="true" launch-prefix="nice -n -10"/>
+    <node pkg="innok_heros_driver" type="diagnostics.py" name="heros_diagnostics" args="" respawn="true"/>
+
+    <!-- CAN -->
+    <node pkg="socketcan_bridge" type="socketcan_to_topic_node" name="socketcan_to_topic_node">
+      <remap from="received_messages" to="can"/>
+    </node>
+
+    <!-- Battery CAN node -->
+    <node pkg="innok_can_bms" type="innok_can_bms_node.py" name="innok_can_bms_node" respawn="true">
+      <remap from="/battery_state" to="/battery_state_can"/>
+    </node>
+    <!-- Battery Watchdog -->
+    <rosparam file="&project_directory;/config/battery.yaml"/>
+    <node pkg="battery_watchdog" type="battery_watchdog.py" name="battery_watchdog" respawn="true">
+      <remap from="/battery_state" to="/battery_state_can"/>
+    </node>
+
+    <rosparam file="&project_directory;/config/navigation_mode.yaml"/>
+    <!-- LOCALIZATION 
+    <rosparam file="$(find innok_gps_localization)/config/reference_gps/irhq.yaml" command="load" ns="utm_map_tf_publisher" />
+    <node name="utm_map_tf_publisher" pkg="innok_gps_localization" type="utm_map_tf_publisher.py"  />
+    -->
+    <!-- BACKEND -->
+    <rosparam file="&project_directory;/config/behaviours.yaml"/>
+    <include file="$(find innok_behaviours)/launch/behaviours_dual_axis.launch">
+      <arg name="warn_before_driving" value="false"/>
+      <arg name="teleop_available" value="false"/>
+      <arg name="cloud_topic_in" value="/hesai/pandar" />
+      <arg name="imu_frame_tilt" value="/imu_link" />
+    </include>
+    
+    <rosparam file="&project_directory;/config/platform.yaml"/>
+    <include file="$(find cockpit_induros)/launch/backend.launch">
+      <arg name="project_directory" value="&project_directory;"/> 
+      <arg name="graph_file" value="&project_directory;/db/graph.db"/>
+      <arg name="amcl_config" value="$(find cockpit_induros)/config/amcl__indoor_omni.yaml"/>
+      <arg name="imu_odom_fusion_config" value="$(find cockpit_induros)/config/fusion__relative_imu_no_odom_yaw.yaml"/>
+    </include>
+
+    <include file="$(find innok_backend)/launch/teleop.launch" >
+      <arg name="teleop_available" value="false"/>
+    </include>
+
+    <!--include file="$(find cockpit_induros)/launch/induros.launch" /-->
+
+    <!-- LIDAR -->
+    <include file="$(find hesai_lidar)/launch/cloud_nodelet.launch" >
+      <arg name="manager" value="pc_nodelet_manager"/>
+      <arg name="lidar_type" value="PandarXT-16"/>
+      <arg name="frame_id" value="lidar"/>
+      <arg name="timestamp_type" value="realtime"/>
+      <arg name="lidar_correction_file" value="$(find hesai_lidar)/config/PandarXT-16.csv"/>
+      <!--<arg name="fixed_frame" value="laser"/-->
+      <!--<arg name="target_frame" value="lidar"/>-->
+
+    </include>
+    <node pkg="nodelet" type="nodelet" name="pc_transform_nodelet" args="load pointcloud_transform_nodelet/PointcloudTransformNodelet hesai/pc_nodelet_manager" respawn="true" output="screen">
+      <param name="source_frame" value="lidar_twisted"/>
+      <param name="target_frame" value="lidar"/>
+    </node>
+
+
+    <node name="pointcloud_to_laserscan_node" pkg="pointcloud_to_laserscan" type="pointcloud_to_laserscan_node" respawn="true">
+      <remap from="/cloud_in" to="/filtered_cloud"/>
+      <remap from="/scan" to="/lidar_scan"/>
+      <param name="range_max" type="int" value="200" />
+      <param name="min_height" value="-0.3" />
+      <param name="max_height" value="1.5" />
+      <param name="angle_increment" value="0.00314" />
+      <param name="scan_time" value="0.1" />
+    </node>
+
+    <!-- GPS -->
+    <node name="gps_to_crs" pkg="innok_gps_localization" type="gps_to_crs.py" respawn="true" >
+      <!--<remap from="heading" to="filter/quaternion" />-->
+      <remap from="/fix" to="/gps/fix" />
+      <remap from="/attitude" to="/yaw" />
+      <param name="publish_tf" value="true" type="bool" />
+      <!-- <param name="heading_offset" value="1.571" /> -->
+    </node> 
+
+    <include file="$(find trimble_gnss_driver)/launch/gsof_driver.launch">
+      <arg name="rtk_ip" value="10.21.52.3"/>
+      <arg name="rtk_port" value="28002"/>
+      <arg name="output_frame_id" value="antenna"/>
+    </include>
+
+    <!-- IMU -->
+    <node  name="xsens_mti_node" pkg="xsens_mti_driver" type="xsens_mti_node" respawn="true" launch-prefix="nice -n -10" if="$(arg xsens)">
+      <!--param name="frame_id" type="string" value="imu_link" />
+      <param name="port" type="string" value="/dev/xsens_mti3" />
+      <param name="pub_imu" type="bool" value="true" /-->
+      <remap from="imu/data" to="imu"/>
+      <remap from="status" to="xsens_status"/>
+      <remap from="tf" to="imu_tf"/>
+      <rosparam command="load" file="&project_directory;/config/xsens_mti_node.yaml" />
+    </node>
+    <node  name="manual_mode_node" pkg="manual_mode" type="move_robot.py" respawn="true"/>
+    <!-- rosbridge for foxglove etc -->
+    <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch" />
+
+    <include file="$(find innok_delta_charging)/launch/delta_charging.launch" />
+
+    <node pkg="calibration" type="calibration" name="odom_calibration" respawn="true"/>
+
+    <node pkg="innok_follow_me" type="follow_node.py" name="follow_node" respawn="true">
+        <remap from="scan" to="lidar_scan"/>
+    </node>
+
+    <!-- Notifier -->
+    <node pkg="innok_backend" type="notifier" name="notifier" respawn="true">
+      <rosparam param="apprise_info">[]</rosparam>
+      <rosparam param="apprise_warn">['pover://uux1g1csvb2dz5zwdk8xozov9efqpz@af3fcrqazd63eun7nw1mh34ed4nnqe']</rosparam>
+      <rosparam param="apprise_error">['pover://uux1g1csvb2dz5zwdk8xozov9efqpz@af3fcrqazd63eun7nw1mh34ed4nnqe?priority=high']</rosparam>
+      <param name="webhook_url" value="https://innokroboticsde.webhook.office.com/webhookb2/f668ad5e-3678-40a8-a8a1-69ee53e015ad@1a79500d-6854-41d8-930a-2f271579c6f4/IncomingWebhook/334c9f93421f4047adf9904016a4ea1f/79d02acb-d2c5-4f93-bc9c-c8c5ec230978"/>
+      <param name="webhook_type" value="msteams"/>
+    </node>
+    <node pkg="innok_backend" type="mission_evaluator.py" name="mission_evaluator" respawn="true"/>
+</launch>
