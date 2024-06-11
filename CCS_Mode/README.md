@@ -28,7 +28,9 @@ This node is designed to be launched via a launch file which automatically initi
 
 ### Subscribed Topics
 /CCS_Data (std_msgs/Int8): Listens for commands to control the cmd_vel topic multiplexer:
+
 1: Activates /none/cmd_vel (disables robot motion commands)
+
 0: Activates /zeros/cmd_vel (sets robot motion commands to zero)
 ### Services Used
 /mux_cmdvel_ui/select (topic_tools/MuxSelect): Switches the active cmd_vel topic based on the received commands.
